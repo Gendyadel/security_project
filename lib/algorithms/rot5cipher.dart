@@ -9,6 +9,7 @@ class Rot5 {
     for (var i = 0; i < text.length; i++) {
       var char = text[i];
 
+
       if (isDigit(char)) {
         cipher.write(((int.parse(char) + add) % 10).toString());
       } else {

@@ -6,6 +6,7 @@ import 'package:security_project/algorithms/utils.dart';
 class AffineCipher {
   late int key, m;
 
+
   /// [a] and [b] are required.
   ///
   /// [ArgumentError] if [a] is not prime with 26.

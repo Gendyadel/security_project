@@ -31,6 +31,7 @@ class CaesarCipher {
     return cipher.toString();
   }
 
+
   /// Encrypt [text].
   String encrypt(String text) {
     return _convert(text, this.shift);

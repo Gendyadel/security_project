@@ -12,6 +12,7 @@ class FallVigenereCipher {
     int keyIndex = 0;
     String keyUpper = this.key.toUpperCase();
 
+
     for (var i = 0; i < text.length; i++) {
       String ch = text[i];
 

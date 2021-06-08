@@ -18,6 +18,7 @@ void main() {
   print(eslamEncrypt); // Lwwla Agclp!
   print(eslamDecrypt); // vigenere cipher
 
+
   var gendyRot=Rot5();
   String gendyEncrypt = gendyRot.encrypt('1 23 456 7890');
   String gendyDecrypt = gendyRot.decrypt(gendyEncrypt);

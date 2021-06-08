@@ -15,6 +15,7 @@ class FallVigenereCipher {
     for (var i = 0; i < text.length; i++) {
       String ch = text[i];
 
+
       if (isLetter(ch)) {
         int alphaIndex = alphabet.indexOf(ch.toUpperCase());
 

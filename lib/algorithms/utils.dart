@@ -8,6 +8,7 @@ bool isDigit(String s) => RegExp(r"^[0-9]+$").hasMatch(s);
 // check if string is letter
 bool isLetter(String s) => RegExp(r"^[a-zA-Z]+$").hasMatch(s);
 
+
 // check if string is lowercase
 bool isLower(String s) {
   var c = s.codeUnitAt(0);
