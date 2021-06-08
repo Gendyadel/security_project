@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:security_project/src/components/custom_algorithm.dart';
-import 'package:security_project/src/components/default_button.dart';
+import 'package:security_project/components/custom_algorithm.dart';
+import 'package:security_project/components/default_button.dart';
 import 'package:security_project/src/constants.dart';
 
 class MainScreen extends StatelessWidget {
