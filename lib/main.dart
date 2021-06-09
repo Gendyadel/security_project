@@ -1,11 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:security_project/algorithms/affine_cypher.dart';
 import 'package:security_project/algorithms/ceaser_cipher.dart';
 import 'package:security_project/algorithms/rot5cipher.dart';
 import 'package:security_project/algorithms/vignere.dart';
+import 'package:security_project/src/app_root.dart';
+import 'package:security_project/views/main_screen.dart';
 
 
 void main() {
 
+  runApp(AppRoot());
   var affineCypher=AffineCipher(3, 5);
   String encrypt = affineCypher.encrypt('Hello World!');
   String decrypt = affineCypher.decrypt(encrypt);

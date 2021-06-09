@@ -3,7 +3,7 @@ import 'package:security_project/src/constants.dart';
 
 Widget defaultButton({
   double width = double.infinity,
-  Color background = defaultColor,
+  Color background = kDefaultColor,
   required Function onPressed,
   required String text,
 }) =>
