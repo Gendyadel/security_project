@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:security_project/src/constants.dart';
 
-
-
-class BorederTextField extends StatelessWidget {
+class BorderTextField extends StatelessWidget {
   final String hint;
   final IconData icon;
   final Color color;
+  final controller;
+  Color insideTextColor;
 
-
-
-     BorederTextField(
+     BorderTextField(
       {
         required this.hint,
         required this.icon,
-        required this.color
+        required this.color,
+        required this.controller,
+         this.insideTextColor=kDefaultColor
        });
   @override
   Widget build(BuildContext context) {
     return Expanded(
-
       child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 10),
         child: TextFormField(
-          style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),
+          controller: controller,
+          style: TextStyle(
+              color: insideTextColor,
+              fontSize: 16,fontWeight: FontWeight.w500),
           cursorColor: color,
           decoration: InputDecoration(
             focusedBorder:  OutlineInputBorder(

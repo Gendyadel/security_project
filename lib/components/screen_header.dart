@@ -42,7 +42,9 @@ class ScreenHeader extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                BorederTextField(
+                BorderTextField(
+                  insideTextColor: Colors.white,
+                  controller: userInputController,
                   hint: 'Plane Text',
                   icon:Icons.text_fields ,
                   color: Colors.white,
