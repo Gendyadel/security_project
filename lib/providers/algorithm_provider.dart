@@ -30,7 +30,7 @@ class AlgorithmsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> algorithmsQueue = [];
+  List<int> algorithmsQueue = [];
 
   changePrintedText(String newText) {
     encryptedText = newText;
@@ -41,7 +41,7 @@ class AlgorithmsProvider extends ChangeNotifier {
     AffineCipher affineCypher = AffineCipher(key, m);
     String encrypt = affineCypher.encrypt(text);
     changePrintedText(encrypt);
-    algorithmsQueue.add('de7k1');
+    algorithmsQueue.add(1);
     notifyListeners();
   }
 
@@ -50,7 +50,7 @@ class AlgorithmsProvider extends ChangeNotifier {
     String encrypt = fallVigenereCipher.encrypt(text);
     print(encrypt);
     changePrintedText(encrypt);
-    algorithmsQueue.add('de7k2');
+    algorithmsQueue.add(2);
     notifyListeners();
   }
 
@@ -59,7 +59,7 @@ class AlgorithmsProvider extends ChangeNotifier {
     String encrypt = cihper.encrypt(text);
     print(encrypt);
     changePrintedText(encrypt);
-    algorithmsQueue.add('de7k3');
+    algorithmsQueue.add(3);
     notifyListeners();
   }
 
@@ -68,34 +68,44 @@ class AlgorithmsProvider extends ChangeNotifier {
     String encrypt = rot5.encrypt(text);
     print(encrypt);
     changePrintedText(encrypt);
-    algorithmsQueue.add('de7k4');
+    algorithmsQueue.add(4);
     notifyListeners();
   }
 
   algorithmDecrypt() {
     print(algorithmsQueue);
-    List<String> reversedQueue = List.from(algorithmsQueue.reversed);
+    List<int> reversedQueue = List.from(algorithmsQueue.reversed);
     print(algorithmsQueue);
     print(reversedQueue);
 
     for (int i = 0; i < reversedQueue.length; i++) {
-      if (reversedQueue[i] == 'de7k1') {
+      if (reversedQueue[i] == 1) {
         AffineCipher affineCypher = AffineCipher(affineKey, affineM);
         String decrypt = affineCypher.decrypt(encryptedText);
         changePrintedText(decrypt);
         notifyListeners();
-      } else if (reversedQueue[i] == 'de7k2') {
+      } else if (reversedQueue[i] == 2) {
         FallVigenereCipher fallVigenereCipher = FallVigenereCipher(vignerKey);
         String decrypt = fallVigenereCipher.decrypt(encryptedText);
         changePrintedText(decrypt);
         notifyListeners();
       }
-      else if (reversedQueue[i] == 'de7k3') {
+      else if (reversedQueue[i] == 3) {
         var caesar = CaesarCipher(caeserKey);
         String dycrypt = caesar.decrypt(encryptedText);
         changePrintedText(dycrypt);
         notifyListeners();
       }
+
+
+      else if (reversedQueue[i]==4)
+        {
+          Rot5 rot5=Rot5();
+          String decrypt = rot5.decrypt(encryptedText);
+          changePrintedText(decrypt);
+          notifyListeners();
+
+        }
     }
   }
 }

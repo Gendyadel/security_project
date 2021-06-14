@@ -8,11 +8,14 @@ import 'package:security_project/providers/algorithm_provider.dart';
 import 'package:security_project/src/constants.dart';
 
 class MainScreen extends StatelessWidget {
-  var plainTextController = TextEditingController();
-  var affineCipherkeyController = TextEditingController();
-  var affineCipherMController = TextEditingController();
-  var fallVigenereCipherkeyController = TextEditingController();
-  var caesarCipherkeyController = TextEditingController();
+
+
+
+  final TextEditingController plainTextController = TextEditingController();
+  final TextEditingController affineCipherkeyController = TextEditingController();
+  final TextEditingController affineCipherMController = TextEditingController();
+  final TextEditingController fallVigenereCipherkeyController = TextEditingController();
+  final TextEditingController caesarCipherkeyController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +37,11 @@ class MainScreen extends StatelessWidget {
                     algorithmName: 'Affine Cipher',
                     buttonPress: () {
                       provider.applyAffineCipherEncrypt(
-                          plainTextController.text,
+                          provider.encryptedText == ''
+                              ? plainTextController.text
+                              : provider.encryptedText,
                           int.parse(affineCipherkeyController.text),
                           int.parse(affineCipherMController.text));
-
                       provider.setAffineData(
                           int.parse(affineCipherkeyController.text),
                           int.parse(affineCipherMController.text));
@@ -64,7 +68,8 @@ class MainScreen extends StatelessWidget {
                           provider.encryptedText == ''
                               ? plainTextController.text
                               : provider.encryptedText,
-                          fallVigenereCipherkeyController.text);
+                          fallVigenereCipherkeyController.text
+                      );
 
                       provider
                           .setVignerData(fallVigenereCipherkeyController.text);
